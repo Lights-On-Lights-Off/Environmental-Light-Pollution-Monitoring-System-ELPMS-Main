@@ -3,6 +3,14 @@
 // Include this at the top of every protected PHP page.
 
 if (session_status() === PHP_SESSION_NONE) {
+    // lifetime 0 means the session cookie is deleted when the browser tab closes
+    session_set_cookie_params([
+        'lifetime' => 0,
+        'path'     => '/',
+        'secure'   => false,
+        'httponly' => true,
+        'samesite' => 'Lax',
+    ]);
     session_start();
 }
 
