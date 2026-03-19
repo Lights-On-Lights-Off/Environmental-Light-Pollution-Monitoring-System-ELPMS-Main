@@ -212,6 +212,9 @@ function timeAgo(string $dt): string {
     </div>
 </div>
 
+<script>
+window.BASE_URL = "<?= url('') ?>";
+</script>
 <script src="<?= url('assets/js/admin.js') ?>"></script>
 </body>
 </html>
