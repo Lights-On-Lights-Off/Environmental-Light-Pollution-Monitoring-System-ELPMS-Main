@@ -79,7 +79,6 @@ if ($method === 'POST') {
             exit;
         }
 
-        $exists = $pdo->prepare("SELECT id FROM users WHERE email = ?")->execute([$email]);
         $exists = $pdo->prepare("SELECT id FROM users WHERE email = ?");
         $exists->execute([$email]);
         if ($exists->fetch()) {
